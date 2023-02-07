@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/navigation_story">
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.capturemoment.ui.home.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.example.capturemoment.ui.home.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/action_navigation_maps_to_detailDialogMapFragment2"
+            app:destination="@id/detailDialogMapFragment2" />
+        <action
+            android:id="@+id/action_navigation_maps_to_optionMapFragment2"
+            app:destination="@id/optionMapFragment2" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_create"
+        android:name="com.example.capturemoment.ui.home.create.CreateStoryFragment"
+        android:label="fragment_create_story"
+        tools:layout="@layout/fragment_create_story" >
+
+        <action
+            android:id="@+id/action_navigation_create_to_navigation_story"
+            app:destination="@id/navigation_story"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/navigation_story"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_story"
+        android:name="com.example.capturemoment.ui.home.story.StoryFragment"
+        android:label="fragment_story"
+        tools:layout="@layout/fragment_story" >
+    </fragment>
+    <dialog
+        android:id="@+id/detailDialogMapFragment2"
+        android:name="com.example.capturemoment.ui.home.maps.dialog.DetailDialogMapFragment"
+        android:label="fragment_detail_dialog_map"
+        tools:layout="@layout/fragment_detail_dialog_map">
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="date"
+            app:argType="string"/>
+        <argument
+            android:name="image"
+            app:argType="string"/>
+        <argument
+            android:name="desc"
+            app:argType="string"/>
+    </dialog>
+    <dialog
+        android:id="@+id/optionMapFragment2"
+        android:name="com.example.capturemoment.ui.home.maps.dialog.OptionMapFragment"
+        android:label="fragment_option_map"
+        tools:layout="@layout/fragment_option_map" />
+</navigation>

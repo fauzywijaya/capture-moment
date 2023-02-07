@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.maps.dialog.OptionMapFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="24dp"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_top"
+            android:layout_width="30dp"
+            android:layout_height="5dp"
+            android:alpha="0.5"
+            android:background="@drawable/shape_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_map_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Type Map"
+            style="@style/TextStyle.SubTitle.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_top" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_top"
+            app:tint="@color/blue_primary" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_default"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_type"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_satellite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_type"/>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_terrain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_type"/>
+
+        <TextView
+            android:id="@+id/tv_map_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_normal"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_default"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_default"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_default" />
+
+        <TextView
+            android:id="@+id/tv_map_satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_satellite"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_satellite"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_satellite"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_satellite" />
+
+        <TextView
+            android:id="@+id/tv_map_terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_terrain"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_terrain"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_terrain"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_terrain" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="192dp"
+            android:layout_marginEnd="24dp"
+            android:alpha="0.5"
+            android:background="@drawable/shape_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_map_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/style_map"
+            style="@style/TextStyle.SubTitle.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/map_style_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:visibility="visible"
+            app:constraint_referenced_ids="tv_map_style_normal,iv_map_style_night,iv_map_style_default,tv_map_style_silver,iv_map_style_silver,tv_map_style_night,tv_map_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_style_default"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_style"/>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_style_night"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_style_night"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_style"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_map_style_silver"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:riv_corner_radius="14dp"
+            android:elevation="0dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_map_style_silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_style"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_map_style_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_normal"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_style_default"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_style_default"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_style_default" />
+
+        <TextView
+            android:id="@+id/tv_map_style_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_night"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_style_night"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_style_night"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_style_night" />
+
+        <TextView
+            android:id="@+id/tv_map_style_silver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/map_silver"
+            style="@style/TextStyle.Content.Regular"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="@+id/iv_map_style_silver"
+            app:layout_constraintStart_toStartOf="@+id/iv_map_style_silver"
+            app:layout_constraintTop_toBottomOf="@+id/iv_map_style_silver" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
